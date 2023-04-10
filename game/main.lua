@@ -1,5 +1,3 @@
-Game = {}
-
 local utils = require("game/utils")
 
 function print(...)
@@ -16,6 +14,7 @@ function print(...)
     end
 end
 
+Game = {}
 function Game:new()
     o = {}
     self.__index = self

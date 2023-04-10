@@ -35,7 +35,12 @@ function Game:load()
 
         if f then
             m = f()
-            m.init(mod)
+
+            if m and m.init then
+                m.init(mod)
+            else
+                print("🚨 Error loading mod " .. mod.name .. ": init() function not found")
+            end
         else
             print("🚨 Error loading mod " .. mod.name .. ": " .. err)
         end
